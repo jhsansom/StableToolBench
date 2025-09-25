@@ -17,6 +17,13 @@
 
 </p>
 
+# Modifications for ITL with LLMs
+
+- The folders `test_answers` and `test_answer_results` contain the trajectories and their pass judgments (issued by GPT-4.1-mini) respectively. We utilized trajectories provided by the original ToolBench authors in [this folder](https://drive.google.com/drive/folders/1TysbSWYpP8EioFu9xPJtpbJZMLLmwAmL) (download the reproduction data).
+- The script `judge_collected_gts.sh` can be re-run to evaluate the trajectories. We only utilized trajectories uniformly marked as "solved".
+
+
+# Original StableToolBench README
 
 Welcome to **StableToolBench**. Faced with the instability of Tool Learning benchmarks, we developed this new benchmark aiming to balance the stability and reality, based on [ToolBench](https://github.com/OpenBMB/ToolBench) (Qin et al., 2023).
 

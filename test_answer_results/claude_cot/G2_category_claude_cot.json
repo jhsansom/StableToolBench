@@ -1,0 +1,20 @@
+{
+    "43": {
+        "query": "My friends and I are eagerly awaiting the delivery of a package. Can you please track the package with the Pack & Send reference number 'ReferenceNumberHere'? Additionally, I'm interested in the latest status of the package with colis ID 'CA107308006SI'.",
+        "tool_names": [
+            "transactions_for_orderful",
+            "api_tracking_for_pack_send",
+            "health_for_suivi_colis",
+            "all_for_suivi_colis",
+            "latest_for_suivi_colis",
+            "Finish"
+        ],
+        "answer_steps": "Step 1: {'name': 'latest_for_suivi_colis', 'arguments': '{\"colisid\": \"CA107308006SI\"}\\n', 'response': '{\"error\": \"\", \"response\": \"{\\'country\\': {\\'code\\': \\'NC\\', \\'iso\\': \\'NCL\\', \\'name\\': \\'nouvelle-caledonie\\'}, \\'date\\': \\'2019-09-09T09:41:12\\', \\'informations\\': \\'\\', \\'itemId\\': \\'CA107308006SI\\', \\'localisation\\': \\'NOUMEA CDC\\', \\'localization\\': {\\'longName\\': \\'\\', \\'name\\': \\'\\', \\'url\\': \\'\\'}, \\'pays\\': \\'Nouvelle-Cal\\\\u00e9donie\\', \\'rawDateHeure\\': \\'09/09/2019 09:41:12\\', \\'status\\': \\'COLIS_LIVRE\\', \\'typeEvenement\\': \\'Votre courrier / colis a \\\\u00e9t\\\\u00e9 livr\\\\u00e9.\\'}\"}'}\nStep 2: {'name': 'api_tracking_for_pack_send', 'arguments': '{\"reference\": \"ReferenceNumberHere\"}\\n', 'response': '{\"error\": \"\", \"response\": \"{\\'type\\': \\'https://tools.ietf.org/html/rfc7231#section-6.5.1\\', \\'title\\': \\'Bad Request\\', \\'status\\': 400, \\'traceId\\': \\'|b1da62f4-47a57f57d8b1a7d2.\\'}\"}'}\nStep 3: {'name': 'latest_for_suivi_colis', 'arguments': '{\"colisid\": \"CA107308006SI\"}\\n', 'response': '{\"error\": \"\", \"response\": \"{\\'country\\': {\\'code\\': \\'NC\\', \\'iso\\': \\'NCL\\', \\'name\\': \\'nouvelle-caledonie\\'}, \\'date\\': \\'2019-09-09T09:41:12\\', \\'informations\\': \\'\\', \\'itemId\\': \\'CA107308006SI\\', \\'localisation\\': \\'NOUMEA CDC\\', \\'localization\\': {\\'longName\\': \\'\\', \\'name\\': \\'\\', \\'url\\': \\'\\'}, \\'pays\\': \\'Nouvelle-Cal\\\\u00e9donie\\', \\'rawDateHeure\\': \\'09/09/2019 09:41:12\\', \\'status\\': \\'COLIS_LIVRE\\', \\'typeEvenement\\': \\'Votre courrier / colis a \\\\u00e9t\\\\u00e9 livr\\\\u00e9.\\'}\"}'}\nStep 4: {'name': 'Finish', 'arguments': '{\"return_type\": \"give_answer\", \"final_answer\": \"I was unable to retrieve tracking information for the invalid Pack & Send reference number provided. However, I got the latest status for the package with colis ID \\'CA107308006SI\\' - it was delivered on September 9, 2019 in Noumea, New Caledonia.\"}\\n', 'response': ''}",
+        "final_step": "Final step: {'name': 'Finish', 'arguments': '{\"return_type\": \"give_answer\", \"final_answer\": \"I was unable to retrieve tracking information for the invalid Pack & Send reference number provided. However, I got the latest status for the package with colis ID \\'CA107308006SI\\' - it was delivered on September 9, 2019 in Noumea, New Caledonia.\"}\\n', 'response': ''}",
+        "is_solved": {
+            "0": "AnswerStatus.Solved",
+            "1": "AnswerStatus.Solved",
+            "2": "AnswerStatus.Solved"
+        }
+    }
+}

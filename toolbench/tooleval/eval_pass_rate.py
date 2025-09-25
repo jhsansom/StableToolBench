@@ -114,10 +114,10 @@ if __name__ == "__main__":
                 if 'is_solved' not in label_cnt[query_id]:
                     label_cnt[query_id]["is_solved"] = {}
                 label_cnt[query_id]["is_solved"][evaluate_time] = str(is_solved)
-                json.dump(label_cnt, open(f"{args.save_path}/{test_set}_{reference_model}.json", "w"), ensure_ascii=False, indent=4)
-        json.dump(label_cnt, open(f"{args.save_path}/{test_set}_{reference_model}.json", "w"), ensure_ascii=False, indent=4)
+                json.dump(label_cnt, open(f"{args.save_path}/{test_set}.json", "w"), ensure_ascii=False, indent=4)
+        json.dump(label_cnt, open(f"{args.save_path}/{test_set}.json", "w"), ensure_ascii=False, indent=4)
         
-        filename = f"{args.save_path}/{test_set}_{reference_model}.csv"
+        filename = f"{args.save_path}/{test_set}.csv"
         write_results(filename, reference_model, label_cnt)
         scores = []
         for runtime in range(args.evaluate_times):

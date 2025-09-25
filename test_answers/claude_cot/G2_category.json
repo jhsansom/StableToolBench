@@ -1,0 +1,170 @@
+{
+    "43": {
+        "query": "My friends and I are eagerly awaiting the delivery of a package. Can you please track the package with the Pack & Send reference number 'ReferenceNumberHere'? Additionally, I'm interested in the latest status of the package with colis ID 'CA107308006SI'.",
+        "available_tools": [
+            {
+                "name": "transactions_for_orderful",
+                "description": "This is the subfunction for tool \"orderful\", you can use this tool.The description of this function is: \"Get Transaction by ID\"",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "is_id": {
+                            "type": "string",
+                            "description": "Orderful Transaction ID",
+                            "example_value": "8209520"
+                        }
+                    },
+                    "required": [
+                        "is_id"
+                    ],
+                    "optional": []
+                }
+            },
+            {
+                "name": "api_tracking_for_pack_send",
+                "description": "This is the subfunction for tool \"pack_send\", you can use this tool.The description of this function is: \"If you support your Pack & Send Reference Number, we can provide your with some relevant information.\"",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "reference": {
+                            "type": "string",
+                            "description": "",
+                            "example_value": "ReferenceNumberHere"
+                        }
+                    },
+                    "required": [
+                        "reference"
+                    ],
+                    "optional": []
+                }
+            },
+            {
+                "name": "health_for_suivi_colis",
+                "description": "This is the subfunction for tool \"suivi_colis\", you can use this tool.The description of this function is: \"Get the API's health\"",
+                "parameters": {
+                    "type": "object",
+                    "properties": {},
+                    "required": [],
+                    "optional": []
+                }
+            },
+            {
+                "name": "all_for_suivi_colis",
+                "description": "This is the subfunction for tool \"suivi_colis\", you can use this tool.The description of this function is: \"Tout l'historique du colis depuis son envoi jusqu'au dernier \u00e9tat en cours.\"",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "colisid": {
+                            "type": "string",
+                            "description": "",
+                            "example_value": "CA107308006SI"
+                        }
+                    },
+                    "required": [
+                        "colisid"
+                    ],
+                    "optional": []
+                }
+            },
+            {
+                "name": "latest_for_suivi_colis",
+                "description": "This is the subfunction for tool \"suivi_colis\", you can use this tool.The description of this function is: \"L'\u00e9tat courant (ie. le dernier \u00e9tat du colis).\"",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "colisid": {
+                            "type": "string",
+                            "description": "",
+                            "example_value": "CA107308006SI"
+                        }
+                    },
+                    "required": [
+                        "colisid"
+                    ],
+                    "optional": []
+                }
+            },
+            {
+                "name": "Finish",
+                "description": "If you believe that you have obtained a result that can answer the task, please call this function to provide the final answer. Alternatively, if you recognize that you are unable to proceed with the task in the current state, call this function to restart. Remember: you must ALWAYS call this function at the end of your attempt, and the only part that will be shown to the user is the final answer, so it should contain sufficient information.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "return_type": {
+                            "type": "string",
+                            "enum": [
+                                "give_answer",
+                                "give_up_and_restart"
+                            ]
+                        },
+                        "final_answer": {
+                            "type": "string",
+                            "description": "The final answer you want to give the user. You should have this field if \"return_type\"==\"give_answer\""
+                        }
+                    },
+                    "required": [
+                        "return_type"
+                    ]
+                }
+            }
+        ],
+        "answer": {
+            "method": "CoT",
+            "total_steps": 6,
+            "final_answer": "I was unable to retrieve tracking information for the invalid Pack & Send reference number provided. However, I got the latest status for the package with colis ID 'CA107308006SI' - it was delivered on September 9, 2019 in Noumea, New Caledonia.",
+            "answer_details": [
+                {
+                    "role": "system",
+                    "message": "",
+                    "next": [
+                        {
+                            "role": "user",
+                            "message": "",
+                            "next": [
+                                {
+                                    "role": "tool",
+                                    "message": {
+                                        "name": "latest_for_suivi_colis",
+                                        "arguments": "{\"colisid\": \"CA107308006SI\"}\n",
+                                        "response": "{\"error\": \"\", \"response\": \"{'country': {'code': 'NC', 'iso': 'NCL', 'name': 'nouvelle-caledonie'}, 'date': '2019-09-09T09:41:12', 'informations': '', 'itemId': 'CA107308006SI', 'localisation': 'NOUMEA CDC', 'localization': {'longName': '', 'name': '', 'url': ''}, 'pays': 'Nouvelle-Cal\\u00e9donie', 'rawDateHeure': '09/09/2019 09:41:12', 'status': 'COLIS_LIVRE', 'typeEvenement': 'Votre courrier / colis a \\u00e9t\\u00e9 livr\\u00e9.'}\"}"
+                                    },
+                                    "next": [
+                                        {
+                                            "role": "tool",
+                                            "message": {
+                                                "name": "api_tracking_for_pack_send",
+                                                "arguments": "{\"reference\": \"ReferenceNumberHere\"}\n",
+                                                "response": "{\"error\": \"\", \"response\": \"{'type': 'https://tools.ietf.org/html/rfc7231#section-6.5.1', 'title': 'Bad Request', 'status': 400, 'traceId': '|b1da62f4-47a57f57d8b1a7d2.'}\"}"
+                                            },
+                                            "next": [
+                                                {
+                                                    "role": "tool",
+                                                    "message": {
+                                                        "name": "latest_for_suivi_colis",
+                                                        "arguments": "{\"colisid\": \"CA107308006SI\"}\n",
+                                                        "response": "{\"error\": \"\", \"response\": \"{'country': {'code': 'NC', 'iso': 'NCL', 'name': 'nouvelle-caledonie'}, 'date': '2019-09-09T09:41:12', 'informations': '', 'itemId': 'CA107308006SI', 'localisation': 'NOUMEA CDC', 'localization': {'longName': '', 'name': '', 'url': ''}, 'pays': 'Nouvelle-Cal\\u00e9donie', 'rawDateHeure': '09/09/2019 09:41:12', 'status': 'COLIS_LIVRE', 'typeEvenement': 'Votre courrier / colis a \\u00e9t\\u00e9 livr\\u00e9.'}\"}"
+                                                    },
+                                                    "next": [
+                                                        {
+                                                            "role": "tool",
+                                                            "message": {
+                                                                "name": "Finish",
+                                                                "arguments": "{\"return_type\": \"give_answer\", \"final_answer\": \"I was unable to retrieve tracking information for the invalid Pack & Send reference number provided. However, I got the latest status for the package with colis ID 'CA107308006SI' - it was delivered on September 9, 2019 in Noumea, New Caledonia.\"}\n",
+                                                                "response": ""
+                                                            },
+                                                            "next": []
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
