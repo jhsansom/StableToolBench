@@ -20,7 +20,7 @@ def completion_request(key, base_url, prompt,
         "prompt": prompt,
         "temperature": 0,
         "max_tokens": 1024,
-        "stop": "</s>",
+        "stop": "</end>",
         "echo": False,
         "extra_body": {
             "truncate_prompt_tokens": 7168, # 7680
@@ -141,7 +141,7 @@ class ToolLLaMA_vllm:
                     }
                     return message, 0, total_tokens
 
-                thought, action, action_input = react_parser(message)
+                thought, action, action_input = a(message)
                 # print(message)
                 # import pdb; pdb.set_trace()
                 random_id = ''.join([random.choice(string.ascii_letters + string.digits) for _ in range(8)])

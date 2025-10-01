@@ -8,10 +8,10 @@ from termcolor import colored
 import random
 from toolbench.inference.LLM.chatgpt_function_model import ChatGPTFunction
 from toolbench.inference.LLM.davinci_model import Davinci
-from toolbench.inference.LLM.tool_llama_lora_model import ToolLLaMALoRA
-from toolbench.inference.LLM.tool_llama_model import ToolLLaMA
+#from toolbench.inference.LLM.tool_llama_lora_model import ToolLLaMALoRA
+#from toolbench.inference.LLM.tool_llama_model import ToolLLaMA
 from toolbench.inference.LLM.tool_llama_vllm_model import ToolLLaMA_vllm
-from toolbench.inference.LLM.retriever import ToolRetriever
+#from toolbench.inference.LLM.retriever import ToolRetriever
 from toolbench.inference.Algorithms.single_chain import single_chain
 from toolbench.inference.Algorithms.DFS import DFS_tree_search
 from toolbench.inference.server import get_rapidapi_response
@@ -482,6 +482,8 @@ class pipeline_runner:
         if method.startswith("CoT"):
             passat = int(method.split("@")[-1])
             chain = single_chain(llm=llm_forward, io_func=env,process_id=process_id)
+
+            # Code to actually call the LLM
             result = chain.start(
                                 pass_at=passat,
                                 single_chain_max_step=single_chain_max_step,

@@ -18,7 +18,7 @@ from transformers import (
     AutoTokenizer,
     LlamaForCausalLM,
 )
-from peft import PeftModel
+#from peft import PeftModel
 
 from toolbench.tool_conversation import Conversation, get_conv_template
 from toolbench.model.compression import load_compress_model
@@ -114,11 +114,11 @@ def load_model(
                 torch_dtype=torch.float16,
                 device_map="auto",
             )
-            model = PeftModel.from_pretrained(
-                model,
-                model_path,
-                torch_dtype=torch.float16,
-            )
+            # model = PeftModel.from_pretrained(
+            #     model,
+            #     model_path,
+            #     torch_dtype=torch.float16,
+            # )
         
         elif num_gpus != 1:
             
