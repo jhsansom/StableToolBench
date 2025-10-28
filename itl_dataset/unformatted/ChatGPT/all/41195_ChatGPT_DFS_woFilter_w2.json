@@ -1,0 +1,320 @@
+{
+  "win": true,
+  "tree": {
+    "size": 6,
+    "max_length": 6,
+    "tree": {
+      "is_terminal": false,
+      "pruned": false,
+      "finished": false,
+      "depth": 0,
+      "node_type": "Action Input",
+      "description": "",
+      "Elo": 0.0,
+      "matching_time": 0,
+      "child_count": 1,
+      "expand_num": 0,
+      "io_state": {},
+      "children": [
+        {
+          "is_terminal": false,
+          "pruned": false,
+          "finished": false,
+          "depth": 1,
+          "node_type": "Action",
+          "description": "list_existing_compensations_for_co2_offset",
+          "Elo": 0.0,
+          "matching_time": 0,
+          "child_count": 1,
+          "expand_num": 0,
+          "children": [
+            {
+              "is_terminal": false,
+              "pruned": false,
+              "finished": true,
+              "depth": 2,
+              "node_type": "Action Input",
+              "description": "{}",
+              "Elo": 0.0,
+              "matching_time": 0,
+              "observation": "{\"error\": \"\", \"response\": \"[]\"}",
+              "observation_code": 0,
+              "child_count": 1,
+              "expand_num": 1,
+              "io_state": {},
+              "children": [
+                {
+                  "is_terminal": false,
+                  "pruned": false,
+                  "finished": true,
+                  "depth": 3,
+                  "node_type": "Thought",
+                  "description": "Currently, there are no CO2 offset certificates available.",
+                  "Elo": 0.0,
+                  "matching_time": 0,
+                  "child_count": 1,
+                  "expand_num": 2,
+                  "children": [
+                    {
+                      "is_terminal": false,
+                      "pruned": false,
+                      "finished": true,
+                      "depth": 4,
+                      "node_type": "Action",
+                      "description": "Finish",
+                      "Elo": 0.0,
+                      "matching_time": 0,
+                      "child_count": 1,
+                      "expand_num": 0,
+                      "children": [
+                        {
+                          "is_terminal": false,
+                          "pruned": false,
+                          "finished": true,
+                          "depth": 5,
+                          "node_type": "Action Input",
+                          "description": "{\n  \"return_type\": \"give_answer\",\n  \"final_answer\": \"There are no CO2 offset certificates available at the moment.\"\n}",
+                          "Elo": 0.0,
+                          "matching_time": 0,
+                          "observation": "{\"response\":\"successfully giving the final answer.\"}",
+                          "observation_code": 3,
+                          "child_count": 0,
+                          "expand_num": 3,
+                          "io_state": {},
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "forward_args": {
+    "single_chain_max_step": 12,
+    "tree_beam_size": 2,
+    "max_query_count": 100,
+    "answer": 1,
+    "with_filter": false
+  },
+  "compare_candidates": [
+    [
+      {
+        "is_terminal": false,
+        "pruned": false,
+        "finished": false,
+        "depth": 1,
+        "node_type": "Action",
+        "description": "list_existing_compensations_for_co2_offset",
+        "Elo": 0.0,
+        "matching_time": 0,
+        "child_count": 1,
+        "expand_num": 0
+      },
+      {
+        "is_terminal": false,
+        "pruned": false,
+        "finished": true,
+        "depth": 2,
+        "node_type": "Action Input",
+        "description": "{}",
+        "Elo": 0.0,
+        "matching_time": 0,
+        "observation": "{\"error\": \"\", \"response\": \"[]\"}",
+        "observation_code": 0,
+        "child_count": 1,
+        "expand_num": 1,
+        "io_state": {}
+      },
+      {
+        "is_terminal": false,
+        "pruned": false,
+        "finished": true,
+        "depth": 3,
+        "node_type": "Thought",
+        "description": "Currently, there are no CO2 offset certificates available.",
+        "Elo": 0.0,
+        "matching_time": 0,
+        "child_count": 1,
+        "expand_num": 2
+      },
+      {
+        "is_terminal": false,
+        "pruned": false,
+        "finished": true,
+        "depth": 4,
+        "node_type": "Action",
+        "description": "Finish",
+        "Elo": 0.0,
+        "matching_time": 0,
+        "child_count": 1,
+        "expand_num": 0
+      },
+      {
+        "is_terminal": false,
+        "pruned": false,
+        "finished": true,
+        "depth": 5,
+        "node_type": "Action Input",
+        "description": "{\n  \"return_type\": \"give_answer\",\n  \"final_answer\": \"There are no CO2 offset certificates available at the moment.\"\n}",
+        "Elo": 0.0,
+        "matching_time": 0,
+        "observation": "{\"response\":\"successfully giving the final answer.\"}",
+        "observation_code": 3,
+        "child_count": 0,
+        "expand_num": 3,
+        "io_state": {}
+      }
+    ]
+  ],
+  "answer_generation": {
+    "valid_data": true,
+    "query_count": 3,
+    "forward_query_count": 3,
+    "backward_query_count": 0,
+    "total_tokens": 2233,
+    "final_answer": "{\n  \"return_type\": \"give_answer\",\n  \"final_answer\": \"There are no CO2 offset certificates available at the moment.\"\n}",
+    "finish_type": "give_answer",
+    "function": [
+      {
+        "name": "list_existing_compensations_for_co2_offset",
+        "description": "This is the subfunction for tool \"co2_offset\", you can use this tool.The description of this function is: \"Returns a list of all existing co2offset certificates linked to account.\"",
+        "parameters": {
+          "type": "object",
+          "properties": {},
+          "required": [],
+          "optional": []
+        }
+      },
+      {
+        "name": "retrieve_compensation_for_co2_offset",
+        "description": "This is the subfunction for tool \"co2_offset\", you can use this tool.The description of this function is: \"Response contains full compensation details (if exists, and owner is account).\"",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "is_id": {
+              "type": "string",
+              "description": "",
+              "example_value": "0xF0F2e446EeD32236EA0c78a6E4a91Ed712654799"
+            }
+          },
+          "required": [
+            "is_id"
+          ],
+          "optional": []
+        }
+      },
+      {
+        "name": "Finish",
+        "description": "If you believe that you have obtained a result that can answer the task, please call this function to provide the final answer. Alternatively, if you recognize that you are unable to proceed with the task in the current state, call this function to restart. Remember: you must ALWAYS call this function at the end of your attempt, and the only part that will be shown to the user is the final answer, so it should contain sufficient information.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "return_type": {
+              "type": "string",
+              "enum": [
+                "give_answer",
+                "give_up_and_restart"
+              ]
+            },
+            "final_answer": {
+              "type": "string",
+              "description": "The final answer you want to give the user. You should have this field if \"return_type\"==\"give_answer\""
+            }
+          },
+          "required": [
+            "return_type"
+          ]
+        }
+      }
+    ],
+    "chain": [],
+    "train_messages": [
+      [
+        {
+          "role": "system",
+          "content": "You are AutoGPT, you can use many tools(functions) to do the following task.\nFirst I will give you the task description, and your task start.\nAt each step, you need to give your thought to analyze the status now and what to do next, with a function call to actually excute your step.\nAfter the call, you will get the call result, and you are now in a new state.\nThen you will analyze your status now, then decide what to do next...\nAfter many (Thought-call) pairs, you finally perform the task, then you can give your finial answer.\nRemember: \n1.the state change is irreversible, you can't go back to one of the former state, if you want to restart the task, say \"I give up and restart\".\n2.All the thought is short, at most in 5 sentence.\n3.You can do more then one trys, so if your plan is to continusly try some conditions, you can do one of the conditions per try.\nLet's Begin!\nTask description: You should use functions to help handle the real time user querys. Remember:\n1.ALWAYS call \"Finish\" function at the end of the task. And the final answer should contain enough information to show to the user,If you can't handle the task, or you find that function calls always fail(the function is not valid now), use function Finish->give_up_and_restart.\n2.Do not use origin tool names, use only subfunctions' names.\nYou have access of the following tools:\n1.co2_offset: GreenHouseGas/CO2 compensation as a service. Get 1kg/month for free to see how easy it is to implement.\n"
+        },
+        {
+          "role": "user",
+          "content": "\nOur company is committed to reducing carbon emissions and we are interested in the CO2 Offset service. Can you show us a list of all the CO2 offset certificates available? We would like to review the details of each certificate, including the organization, external ID, type, and CO2 equivalent.\nBegin!\n"
+        },
+        {
+          "role": "assistant",
+          "content": "I think the current API call \"list_existing_compensations_for_co2_offset\" is used to retrieve a list of all available CO2 offset certificates. By calling this function, I can fetch information such as the organization, external ID, type, and CO2 equivalent of each certificate. This will help our company review the details of each certificate and make informed decisions about which ones to choose.",
+          "function_call": {
+            "name": "list_existing_compensations_for_co2_offset",
+            "arguments": "{}"
+          }
+        }
+      ],
+      [
+        {
+          "role": "system",
+          "content": "You are AutoGPT, you can use many tools(functions) to do the following task.\nFirst I will give you the task description, and your task start.\nAt each step, you need to give your thought to analyze the status now and what to do next, with a function call to actually excute your step.\nAfter the call, you will get the call result, and you are now in a new state.\nThen you will analyze your status now, then decide what to do next...\nAfter many (Thought-call) pairs, you finally perform the task, then you can give your finial answer.\nRemember: \n1.the state change is irreversible, you can't go back to one of the former state, if you want to restart the task, say \"I give up and restart\".\n2.All the thought is short, at most in 5 sentence.\n3.You can do more then one trys, so if your plan is to continusly try some conditions, you can do one of the conditions per try.\nLet's Begin!\nTask description: You should use functions to help handle the real time user querys. Remember:\n1.ALWAYS call \"Finish\" function at the end of the task. And the final answer should contain enough information to show to the user,If you can't handle the task, or you find that function calls always fail(the function is not valid now), use function Finish->give_up_and_restart.\n2.Do not use origin tool names, use only subfunctions' names.\nYou have access of the following tools:\n1.co2_offset: GreenHouseGas/CO2 compensation as a service. Get 1kg/month for free to see how easy it is to implement.\n"
+        },
+        {
+          "role": "user",
+          "content": "\nOur company is committed to reducing carbon emissions and we are interested in the CO2 Offset service. Can you show us a list of all the CO2 offset certificates available? We would like to review the details of each certificate, including the organization, external ID, type, and CO2 equivalent.\nBegin!\n"
+        },
+        {
+          "role": "assistant",
+          "content": "I think the current API call \"list_existing_compensations_for_co2_offset\" is used to retrieve a list of all available CO2 offset certificates. By calling this function, I can fetch information such as the organization, external ID, type, and CO2 equivalent of each certificate. This will help our company review the details of each certificate and make informed decisions about which ones to choose.",
+          "function_call": {
+            "name": "list_existing_compensations_for_co2_offset",
+            "arguments": "{}"
+          }
+        },
+        {
+          "role": "function",
+          "name": "list_existing_compensations_for_co2_offset",
+          "content": "{\"error\": \"\", \"response\": \"[]\"}"
+        },
+        {
+          "role": "assistant",
+          "content": "Currently, there are no CO2 offset certificates available."
+        }
+      ],
+      [
+        {
+          "role": "system",
+          "content": "You are AutoGPT, you can use many tools(functions) to do the following task.\nFirst I will give you the task description, and your task start.\nAt each step, you need to give your thought to analyze the status now and what to do next, with a function call to actually excute your step.\nAfter the call, you will get the call result, and you are now in a new state.\nThen you will analyze your status now, then decide what to do next...\nAfter many (Thought-call) pairs, you finally perform the task, then you can give your finial answer.\nRemember: \n1.the state change is irreversible, you can't go back to one of the former state, if you want to restart the task, say \"I give up and restart\".\n2.All the thought is short, at most in 5 sentence.\n3.You can do more then one trys, so if your plan is to continusly try some conditions, you can do one of the conditions per try.\nLet's Begin!\nTask description: You should use functions to help handle the real time user querys. Remember:\n1.ALWAYS call \"Finish\" function at the end of the task. And the final answer should contain enough information to show to the user,If you can't handle the task, or you find that function calls always fail(the function is not valid now), use function Finish->give_up_and_restart.\n2.Do not use origin tool names, use only subfunctions' names.\nYou have access of the following tools:\n1.co2_offset: GreenHouseGas/CO2 compensation as a service. Get 1kg/month for free to see how easy it is to implement.\n"
+        },
+        {
+          "role": "user",
+          "content": "\nOur company is committed to reducing carbon emissions and we are interested in the CO2 Offset service. Can you show us a list of all the CO2 offset certificates available? We would like to review the details of each certificate, including the organization, external ID, type, and CO2 equivalent.\nBegin!\n"
+        },
+        {
+          "role": "assistant",
+          "content": "I think the current API call \"list_existing_compensations_for_co2_offset\" is used to retrieve a list of all available CO2 offset certificates. By calling this function, I can fetch information such as the organization, external ID, type, and CO2 equivalent of each certificate. This will help our company review the details of each certificate and make informed decisions about which ones to choose.",
+          "function_call": {
+            "name": "list_existing_compensations_for_co2_offset",
+            "arguments": "{}"
+          }
+        },
+        {
+          "role": "function",
+          "name": "list_existing_compensations_for_co2_offset",
+          "content": "{\"error\": \"\", \"response\": \"[]\"}"
+        },
+        {
+          "role": "assistant",
+          "content": "Currently, there are no CO2 offset certificates available."
+        },
+        {
+          "role": "assistant",
+          "content": "Since the previous API call \"list_existing_compensations_for_co2_offset\" returned an empty response, it means that there are currently no CO2 offset certificates available. This information is crucial for our company as it helps us understand the current status and make informed decisions. To handle the situation, I will inform the user that there are no CO2 offset certificates available at the moment using the \"Finish\" function with the arguments specifying the return type as \"give_answer\" and the final answer as \"There are no CO2 offset certificates available at the moment.\" This ensures that the user is aware of the current status and can proceed accordingly.",
+          "function_call": {
+            "name": "Finish",
+            "arguments": "{\n  \"return_type\": \"give_answer\",\n  \"final_answer\": \"There are no CO2 offset certificates available at the moment.\"\n}"
+          }
+        }
+      ]
+    ],
+    "query": "Our company is committed to reducing carbon emissions and we are interested in the CO2 Offset service. Can you show us a list of all the CO2 offset certificates available? We would like to review the details of each certificate, including the organization, external ID, type, and CO2 equivalent."
+  }
+}

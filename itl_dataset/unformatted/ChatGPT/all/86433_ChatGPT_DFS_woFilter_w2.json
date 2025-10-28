@@ -1,0 +1,259 @@
+{
+  "win": true,
+  "tree": {
+    "size": 5,
+    "max_length": 5,
+    "tree": {
+      "is_terminal": false,
+      "pruned": false,
+      "finished": false,
+      "depth": 0,
+      "node_type": "Action Input",
+      "description": "",
+      "Elo": 0.0,
+      "matching_time": 0,
+      "child_count": 1,
+      "expand_num": 0,
+      "io_state": {},
+      "children": [
+        {
+          "is_terminal": false,
+          "pruned": false,
+          "finished": false,
+          "depth": 1,
+          "node_type": "Action",
+          "description": "getqrcode_for_qr_code_generator_with_multiple_datatypes",
+          "Elo": 0.0,
+          "matching_time": 0,
+          "child_count": 1,
+          "expand_num": 0,
+          "children": [
+            {
+              "is_terminal": false,
+              "pruned": false,
+              "finished": true,
+              "depth": 2,
+              "node_type": "Action Input",
+              "description": "{\n  \"type\": \"telno\",\n  \"value\": \"123-456-7890\"\n}",
+              "Elo": 0.0,
+              "matching_time": 0,
+              "observation": "{\"error\": \"\", \"response\": \"{'url': 'http://codzz.com/qrcodes/MDdfMTVfMjNfMTVfMjZfNDg=.jpg', 'Message': 'Thank you.'}\"}",
+              "observation_code": 0,
+              "child_count": 1,
+              "expand_num": 1,
+              "io_state": {},
+              "children": [
+                {
+                  "is_terminal": false,
+                  "pruned": false,
+                  "finished": true,
+                  "depth": 3,
+                  "node_type": "Action",
+                  "description": "Finish",
+                  "Elo": 0.0,
+                  "matching_time": 0,
+                  "child_count": 1,
+                  "expand_num": 0,
+                  "children": [
+                    {
+                      "is_terminal": false,
+                      "pruned": false,
+                      "finished": true,
+                      "depth": 4,
+                      "node_type": "Action Input",
+                      "description": "{\n  \"return_type\": \"give_answer\",\n  \"final_answer\": \"Here is the URL for the QR code image of the phone number '123-456-7890': http://codzz.com/qrcodes/MDdfMTVfMjNfMTVfMjZfNDg=.jpg\"\n}",
+                      "Elo": 0.0,
+                      "matching_time": 0,
+                      "observation": "{\"response\":\"successfully giving the final answer.\"}",
+                      "observation_code": 3,
+                      "child_count": 0,
+                      "expand_num": 2,
+                      "io_state": {},
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "forward_args": {
+    "single_chain_max_step": 12,
+    "tree_beam_size": 2,
+    "max_query_count": 100,
+    "answer": 1,
+    "with_filter": false
+  },
+  "compare_candidates": [
+    [
+      {
+        "is_terminal": false,
+        "pruned": false,
+        "finished": false,
+        "depth": 1,
+        "node_type": "Action",
+        "description": "getqrcode_for_qr_code_generator_with_multiple_datatypes",
+        "Elo": 0.0,
+        "matching_time": 0,
+        "child_count": 1,
+        "expand_num": 0
+      },
+      {
+        "is_terminal": false,
+        "pruned": false,
+        "finished": true,
+        "depth": 2,
+        "node_type": "Action Input",
+        "description": "{\n  \"type\": \"telno\",\n  \"value\": \"123-456-7890\"\n}",
+        "Elo": 0.0,
+        "matching_time": 0,
+        "observation": "{\"error\": \"\", \"response\": \"{'url': 'http://codzz.com/qrcodes/MDdfMTVfMjNfMTVfMjZfNDg=.jpg', 'Message': 'Thank you.'}\"}",
+        "observation_code": 0,
+        "child_count": 1,
+        "expand_num": 1,
+        "io_state": {}
+      },
+      {
+        "is_terminal": false,
+        "pruned": false,
+        "finished": true,
+        "depth": 3,
+        "node_type": "Action",
+        "description": "Finish",
+        "Elo": 0.0,
+        "matching_time": 0,
+        "child_count": 1,
+        "expand_num": 0
+      },
+      {
+        "is_terminal": false,
+        "pruned": false,
+        "finished": true,
+        "depth": 4,
+        "node_type": "Action Input",
+        "description": "{\n  \"return_type\": \"give_answer\",\n  \"final_answer\": \"Here is the URL for the QR code image of the phone number '123-456-7890': http://codzz.com/qrcodes/MDdfMTVfMjNfMTVfMjZfNDg=.jpg\"\n}",
+        "Elo": 0.0,
+        "matching_time": 0,
+        "observation": "{\"response\":\"successfully giving the final answer.\"}",
+        "observation_code": 3,
+        "child_count": 0,
+        "expand_num": 2,
+        "io_state": {}
+      }
+    ]
+  ],
+  "answer_generation": {
+    "valid_data": true,
+    "query_count": 2,
+    "forward_query_count": 2,
+    "backward_query_count": 0,
+    "total_tokens": 1751,
+    "final_answer": "{\n  \"return_type\": \"give_answer\",\n  \"final_answer\": \"Here is the URL for the QR code image of the phone number '123-456-7890': http://codzz.com/qrcodes/MDdfMTVfMjNfMTVfMjZfNDg=.jpg\"\n}",
+    "finish_type": "give_answer",
+    "function": [
+      {
+        "name": "getqrcode_for_qr_code_generator_with_multiple_datatypes",
+        "description": "This is the subfunction for tool \"qr_code_generator_with_multiple_datatypes\", you can use this tool.The description of this function is: \"This API will return you an URL of the QR Code image that you can easily embed on to website or download it for your other needs.\"",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "description": "Select one of the QR code formats to generate. url,text,telno,mailto,smsto",
+              "example_value": "url"
+            },
+            "value": {
+              "type": "string",
+              "description": "Enter value as per your QR code type. Eg: url=https://www.google.com,text=Some text,telno=9142545474,smsto=8542487542",
+              "example_value": "https://www.google.com"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "optional": []
+        }
+      },
+      {
+        "name": "Finish",
+        "description": "If you believe that you have obtained a result that can answer the task, please call this function to provide the final answer. Alternatively, if you recognize that you are unable to proceed with the task in the current state, call this function to restart. Remember: you must ALWAYS call this function at the end of your attempt, and the only part that will be shown to the user is the final answer, so it should contain sufficient information.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "return_type": {
+              "type": "string",
+              "enum": [
+                "give_answer",
+                "give_up_and_restart"
+              ]
+            },
+            "final_answer": {
+              "type": "string",
+              "description": "The final answer you want to give the user. You should have this field if \"return_type\"==\"give_answer\""
+            }
+          },
+          "required": [
+            "return_type"
+          ]
+        }
+      }
+    ],
+    "chain": [],
+    "train_messages": [
+      [
+        {
+          "role": "system",
+          "content": "You are an AutoGPT, capable of utilizing numerous tools and functions to complete the given task. \n1.First, I will provide you with the task description, and your task will commence. \n2.At each step, you need to analyze the current status and determine the next course of action by executing a function call. \n3.Following the call, you will receive the result, transitioning you to a new state. Subsequently, you will analyze your current status, make decisions about the next steps, and repeat this process. \n4.After several iterations of thought and function calls, you will ultimately complete the task and provide your final answer. \n\nRemember: \n1.The state changes are irreversible, and you cannot return to a previous state.\n2.Keep your thoughts concise, limiting them to a maximum of five sentences.\n3.You can make multiple attempts. If you plan to try different conditions continuously, perform one condition per try.\n4.If you believe you have gathered enough information, call the function \"Finish: give_answer\" to provide your answer for the task.\n5.If you feel unable to handle the task from this step, call the function \"Finish: give_up_and_restart\".\nLet's Begin!\nTask description: You should use functions to help handle the real time user querys. Remember:\n1.ALWAYS call \"Finish\" function at the end of the task. And the final answer should contain enough information to show to the user,If you can't handle the task, or you find that function calls always fail(the function is not valid now), use function Finish->give_up_and_restart.\n2.Do not use origin tool names, use only subfunctions' names.\nYou have access of the following tools:\n1.qr_code_generator_with_multiple_datatypes: Our QR code generator API allows you to generate QR codes for various types of data, including text, URLs, phone numbers, SMS messages, and email addresses. The API returns a QR code image in JPG format.\n"
+        },
+        {
+          "role": "user",
+          "content": "\nMy friend is starting a new business and wants to include QR codes on his business cards. Can you generate a QR code for his phone number '123-456-7890'? He would like to receive the URL of the QR code image.\nBegin!\n"
+        },
+        {
+          "role": "assistant",
+          "content": "I am calling the 'getqrcode_for_qr_code_generator_with_multiple_datatypes' function with the argument type='telno' and value='123-456-7890' because the user wants to generate a QR code for his phone number. By specifying the type as 'telno', I can ensure that the QR code will contain the phone number information. This will help my friend include QR codes on his business cards and provide easy access to his phone number for potential customers.",
+          "function_call": {
+            "name": "getqrcode_for_qr_code_generator_with_multiple_datatypes",
+            "arguments": "{\n  \"type\": \"telno\",\n  \"value\": \"123-456-7890\"\n}"
+          }
+        }
+      ],
+      [
+        {
+          "role": "system",
+          "content": "You are an AutoGPT, capable of utilizing numerous tools and functions to complete the given task. \n1.First, I will provide you with the task description, and your task will commence. \n2.At each step, you need to analyze the current status and determine the next course of action by executing a function call. \n3.Following the call, you will receive the result, transitioning you to a new state. Subsequently, you will analyze your current status, make decisions about the next steps, and repeat this process. \n4.After several iterations of thought and function calls, you will ultimately complete the task and provide your final answer. \n\nRemember: \n1.The state changes are irreversible, and you cannot return to a previous state.\n2.Keep your thoughts concise, limiting them to a maximum of five sentences.\n3.You can make multiple attempts. If you plan to try different conditions continuously, perform one condition per try.\n4.If you believe you have gathered enough information, call the function \"Finish: give_answer\" to provide your answer for the task.\n5.If you feel unable to handle the task from this step, call the function \"Finish: give_up_and_restart\".\nLet's Begin!\nTask description: You should use functions to help handle the real time user querys. Remember:\n1.ALWAYS call \"Finish\" function at the end of the task. And the final answer should contain enough information to show to the user,If you can't handle the task, or you find that function calls always fail(the function is not valid now), use function Finish->give_up_and_restart.\n2.Do not use origin tool names, use only subfunctions' names.\nYou have access of the following tools:\n1.qr_code_generator_with_multiple_datatypes: Our QR code generator API allows you to generate QR codes for various types of data, including text, URLs, phone numbers, SMS messages, and email addresses. The API returns a QR code image in JPG format.\n"
+        },
+        {
+          "role": "user",
+          "content": "\nMy friend is starting a new business and wants to include QR codes on his business cards. Can you generate a QR code for his phone number '123-456-7890'? He would like to receive the URL of the QR code image.\nBegin!\n"
+        },
+        {
+          "role": "assistant",
+          "content": "I am calling the 'getqrcode_for_qr_code_generator_with_multiple_datatypes' function with the argument type='telno' and value='123-456-7890' because the user wants to generate a QR code for his phone number. By specifying the type as 'telno', I can ensure that the QR code will contain the phone number information. This will help my friend include QR codes on his business cards and provide easy access to his phone number for potential customers.",
+          "function_call": {
+            "name": "getqrcode_for_qr_code_generator_with_multiple_datatypes",
+            "arguments": "{\n  \"type\": \"telno\",\n  \"value\": \"123-456-7890\"\n}"
+          }
+        },
+        {
+          "role": "function",
+          "name": "getqrcode_for_qr_code_generator_with_multiple_datatypes",
+          "content": "{\"error\": \"\", \"response\": \"{'url': 'http://codzz.com/qrcodes/MDdfMTVfMjNfMTVfMjZfNDg=.jpg', 'Message': 'Thank you.'}\"}"
+        },
+        {
+          "role": "assistant",
+          "content": "I believe the user wants to generate a QR code for their friend's phone number to include on business cards. By calling the 'getqrcode_for_qr_code_generator_with_multiple_datatypes' function with the argument type='telno' and value='123-456-7890', I can ensure that the QR code will contain the phone number information. This will provide easy access to the phone number for potential customers who scan the QR code on the business cards.",
+          "function_call": {
+            "name": "Finish",
+            "arguments": "{\n  \"return_type\": \"give_answer\",\n  \"final_answer\": \"Here is the URL for the QR code image of the phone number '123-456-7890': http://codzz.com/qrcodes/MDdfMTVfMjNfMTVfMjZfNDg=.jpg\"\n}"
+          }
+        }
+      ]
+    ],
+    "query": "My friend is starting a new business and wants to include QR codes on his business cards. Can you generate a QR code for his phone number '123-456-7890'? He would like to receive the URL of the QR code image."
+  }
+}

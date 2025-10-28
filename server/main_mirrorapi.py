@@ -119,9 +119,18 @@ def get_virtual_response(request: Request, info: Info):
     }
     try:
         if os.path.exists(os.path.join(CONFIG['tools_folder'], standard_category)):
-            if os.path.exists(os.path.join(CONFIG['tools_folder'], standard_category, tool_name_original.split("_for_")[0]+".json")):
+            potential_path1 = os.path.join(CONFIG['tools_folder'], standard_category, tool_name_original.split("_for_")[0]+".json")
+            potential_path2 = os.path.join(CONFIG['tools_folder'], standard_category, tool_name_original+".json")
+            if os.path.exists(potential_path1):
+                correct_path = potential_path1
+            elif os.path.exists(potential_path2):
+                correct_path = potential_path2
+            else:
+                correct_path = None
+
+            if correct_path:
                 # read json
-                api_intro = json.load(open(os.path.join(CONFIG['tools_folder'], standard_category, tool_name_original.split("_for_")[0]+".json"), "r"))
+                api_intro = json.load(open(correct_path, "r"))
                 # get tool_dexcription and api_info
                 tool_description = api_intro['tool_description']
                 api_info = []
@@ -139,7 +148,6 @@ def get_virtual_response(request: Request, info: Info):
                 print(f"cant get {tool_name_original}")
     except Exception as e:
         print(f"Loading api_doc error: {e}")
-
 
         
     result = fake_response_function_with_trained_simulator(tool_input, data, api_doc)

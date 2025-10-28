@@ -1,0 +1,778 @@
+{
+  "win": true,
+  "tree": {
+    "size": 12,
+    "max_length": 12,
+    "tree": {
+      "is_terminal": false,
+      "pruned": false,
+      "finished": false,
+      "depth": 0,
+      "node_type": "Action Input",
+      "description": "",
+      "Elo": 0.0,
+      "matching_time": 0,
+      "child_count": 1,
+      "expand_num": 0,
+      "io_state": {},
+      "children": [
+        {
+          "is_terminal": false,
+          "pruned": false,
+          "finished": false,
+          "depth": 1,
+          "node_type": "Action",
+          "description": "v1_caloriesburned_for_calories_burned_by_api_ninjas",
+          "Elo": 0.0,
+          "matching_time": 0,
+          "child_count": 1,
+          "expand_num": 0,
+          "children": [
+            {
+              "is_terminal": false,
+              "pruned": false,
+              "finished": false,
+              "depth": 2,
+              "node_type": "Action Input",
+              "description": "{\n  \"activity\": \"workout\",\n  \"duration\": \"60\"\n}",
+              "Elo": 0.0,
+              "matching_time": 0,
+              "observation": "{\"error\": \"\", \"response\": \"[{'name': 'Weight lifting, light workout', 'calories_per_hour': 217, 'duration_minutes': 60, 'total_calories': 217}]\"}",
+              "observation_code": 0,
+              "child_count": 1,
+              "expand_num": 1,
+              "io_state": {},
+              "children": [
+                {
+                  "is_terminal": false,
+                  "pruned": false,
+                  "finished": false,
+                  "depth": 3,
+                  "node_type": "Action",
+                  "description": "get_appointments_for_appointment_system_api",
+                  "Elo": 0.0,
+                  "matching_time": 0,
+                  "child_count": 1,
+                  "expand_num": 0,
+                  "children": [
+                    {
+                      "is_terminal": false,
+                      "pruned": false,
+                      "finished": false,
+                      "depth": 4,
+                      "node_type": "Action Input",
+                      "description": "{\n  \"date\": \"tomorrow\",\n  \"clinicname\": \"Fit Life\"\n}",
+                      "Elo": 0.0,
+                      "matching_time": 0,
+                      "observation": "{\"error\": \"Message error...\", \"response\": \"{'type': 'https://tools.ietf.org/html/rfc7231#section-6.5.1', 'title': 'One or more validation errors occurred.', 'status': 400, 'traceId': '00-806e006eaff932dbbab440514cffcad1-5ae619f7cdae08c3-00', 'errors': {'date': [\\\"The value 'tomorrow' is not valid.\\\"]}}\"}",
+                      "observation_code": 11,
+                      "child_count": 1,
+                      "expand_num": 2,
+                      "io_state": {},
+                      "children": [
+                        {
+                          "is_terminal": false,
+                          "pruned": false,
+                          "finished": false,
+                          "depth": 5,
+                          "node_type": "Action",
+                          "description": "appointment_time_list_for_appointment_system_api",
+                          "Elo": 0.0,
+                          "matching_time": 0,
+                          "child_count": 1,
+                          "expand_num": 0,
+                          "children": [
+                            {
+                              "is_terminal": false,
+                              "pruned": false,
+                              "finished": false,
+                              "depth": 6,
+                              "node_type": "Action Input",
+                              "description": "{\n  \"date\": \"2022-01-25\",\n  \"clinicname\": \"Fit Life\"\n}",
+                              "Elo": 0.0,
+                              "matching_time": 0,
+                              "observation": "{\"error\": \"Message error...\", \"response\": \"[{'id': 1, 'hLabel': 'Object reference not set to an instance of an object.', 'available': 'error', 'hour': 0, 'minute': 0, 'interval': 0}]\"}",
+                              "observation_code": 11,
+                              "child_count": 1,
+                              "expand_num": 3,
+                              "io_state": {},
+                              "children": [
+                                {
+                                  "is_terminal": false,
+                                  "pruned": false,
+                                  "finished": false,
+                                  "depth": 7,
+                                  "node_type": "Action",
+                                  "description": "get_appointments_for_appointment_system_api",
+                                  "Elo": 0.0,
+                                  "matching_time": 0,
+                                  "child_count": 1,
+                                  "expand_num": 0,
+                                  "children": [
+                                    {
+                                      "is_terminal": false,
+                                      "pruned": false,
+                                      "finished": true,
+                                      "depth": 8,
+                                      "node_type": "Action Input",
+                                      "description": "{\n  \"date\": \"2022-01-25\",\n  \"clinicname\": \"Fit Life\"\n}",
+                                      "Elo": 0.0,
+                                      "matching_time": 0,
+                                      "observation": "{\"error\": \"\", \"response\": \"[]\"}",
+                                      "observation_code": 0,
+                                      "child_count": 1,
+                                      "expand_num": 4,
+                                      "io_state": {},
+                                      "children": [
+                                        {
+                                          "is_terminal": false,
+                                          "pruned": false,
+                                          "finished": true,
+                                          "depth": 9,
+                                          "node_type": "Thought",
+                                          "description": "Based on the information I obtained, a 1-hour workout session of a light weight lifting activity can potentially burn 217 calories. However, I encountered an error while trying to check for available appointments at the 'Fit Life' clinic for tomorrow. Nevertheless, I successfully retrieved the appointment time list for January 25th at the 'Fit Life' clinic, and there was an error in the response. It seems that the appointment system is experiencing some technical issues.",
+                                          "Elo": 0.0,
+                                          "matching_time": 0,
+                                          "child_count": 1,
+                                          "expand_num": 5,
+                                          "children": [
+                                            {
+                                              "is_terminal": false,
+                                              "pruned": false,
+                                              "finished": true,
+                                              "depth": 10,
+                                              "node_type": "Action",
+                                              "description": "Finish",
+                                              "Elo": 0.0,
+                                              "matching_time": 0,
+                                              "child_count": 1,
+                                              "expand_num": 0,
+                                              "children": [
+                                                {
+                                                  "is_terminal": false,
+                                                  "pruned": false,
+                                                  "finished": true,
+                                                  "depth": 11,
+                                                  "node_type": "Action Input",
+                                                  "description": "{\n  \"return_type\": \"give_answer\",\n  \"final_answer\": \"For a 1-hour workout session of light weight lifting, you can potentially burn 217 calories. However, there was an error while checking for available appointments at the 'Fit Life' clinic for tomorrow. Additionally, there was an error in retrieving the appointment time list for January 25th at the 'Fit Life' clinic. It seems that the appointment system is experiencing technical issues.\"\n}",
+                                                  "Elo": 0.0,
+                                                  "matching_time": 0,
+                                                  "observation": "{\"response\":\"successfully giving the final answer.\"}",
+                                                  "observation_code": 3,
+                                                  "child_count": 0,
+                                                  "expand_num": 6,
+                                                  "io_state": {},
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "forward_args": {
+    "single_chain_max_step": 12,
+    "tree_beam_size": 2,
+    "max_query_count": 100,
+    "answer": 1,
+    "with_filter": false
+  },
+  "compare_candidates": [
+    [
+      {
+        "is_terminal": false,
+        "pruned": false,
+        "finished": false,
+        "depth": 1,
+        "node_type": "Action",
+        "description": "v1_caloriesburned_for_calories_burned_by_api_ninjas",
+        "Elo": 0.0,
+        "matching_time": 0,
+        "child_count": 1,
+        "expand_num": 0
+      },
+      {
+        "is_terminal": false,
+        "pruned": false,
+        "finished": false,
+        "depth": 2,
+        "node_type": "Action Input",
+        "description": "{\n  \"activity\": \"workout\",\n  \"duration\": \"60\"\n}",
+        "Elo": 0.0,
+        "matching_time": 0,
+        "observation": "{\"error\": \"\", \"response\": \"[{'name': 'Weight lifting, light workout', 'calories_per_hour': 217, 'duration_minutes': 60, 'total_calories': 217}]\"}",
+        "observation_code": 0,
+        "child_count": 1,
+        "expand_num": 1,
+        "io_state": {}
+      },
+      {
+        "is_terminal": false,
+        "pruned": false,
+        "finished": false,
+        "depth": 3,
+        "node_type": "Action",
+        "description": "get_appointments_for_appointment_system_api",
+        "Elo": 0.0,
+        "matching_time": 0,
+        "child_count": 1,
+        "expand_num": 0
+      },
+      {
+        "is_terminal": false,
+        "pruned": false,
+        "finished": false,
+        "depth": 4,
+        "node_type": "Action Input",
+        "description": "{\n  \"date\": \"tomorrow\",\n  \"clinicname\": \"Fit Life\"\n}",
+        "Elo": 0.0,
+        "matching_time": 0,
+        "observation": "{\"error\": \"Message error...\", \"response\": \"{'type': 'https://tools.ietf.org/html/rfc7231#section-6.5.1', 'title': 'One or more validation errors occurred.', 'status': 400, 'traceId': '00-806e006eaff932dbbab440514cffcad1-5ae619f7cdae08c3-00', 'errors': {'date': [\\\"The value 'tomorrow' is not valid.\\\"]}}\"}",
+        "observation_code": 11,
+        "child_count": 1,
+        "expand_num": 2,
+        "io_state": {}
+      },
+      {
+        "is_terminal": false,
+        "pruned": false,
+        "finished": false,
+        "depth": 5,
+        "node_type": "Action",
+        "description": "appointment_time_list_for_appointment_system_api",
+        "Elo": 0.0,
+        "matching_time": 0,
+        "child_count": 1,
+        "expand_num": 0
+      },
+      {
+        "is_terminal": false,
+        "pruned": false,
+        "finished": false,
+        "depth": 6,
+        "node_type": "Action Input",
+        "description": "{\n  \"date\": \"2022-01-25\",\n  \"clinicname\": \"Fit Life\"\n}",
+        "Elo": 0.0,
+        "matching_time": 0,
+        "observation": "{\"error\": \"Message error...\", \"response\": \"[{'id': 1, 'hLabel': 'Object reference not set to an instance of an object.', 'available': 'error', 'hour': 0, 'minute': 0, 'interval': 0}]\"}",
+        "observation_code": 11,
+        "child_count": 1,
+        "expand_num": 3,
+        "io_state": {}
+      },
+      {
+        "is_terminal": false,
+        "pruned": false,
+        "finished": false,
+        "depth": 7,
+        "node_type": "Action",
+        "description": "get_appointments_for_appointment_system_api",
+        "Elo": 0.0,
+        "matching_time": 0,
+        "child_count": 1,
+        "expand_num": 0
+      },
+      {
+        "is_terminal": false,
+        "pruned": false,
+        "finished": true,
+        "depth": 8,
+        "node_type": "Action Input",
+        "description": "{\n  \"date\": \"2022-01-25\",\n  \"clinicname\": \"Fit Life\"\n}",
+        "Elo": 0.0,
+        "matching_time": 0,
+        "observation": "{\"error\": \"\", \"response\": \"[]\"}",
+        "observation_code": 0,
+        "child_count": 1,
+        "expand_num": 4,
+        "io_state": {}
+      },
+      {
+        "is_terminal": false,
+        "pruned": false,
+        "finished": true,
+        "depth": 9,
+        "node_type": "Thought",
+        "description": "Based on the information I obtained, a 1-hour workout session of a light weight lifting activity can potentially burn 217 calories. However, I encountered an error while trying to check for available appointments at the 'Fit Life' clinic for tomorrow. Nevertheless, I successfully retrieved the appointment time list for January 25th at the 'Fit Life' clinic, and there was an error in the response. It seems that the appointment system is experiencing some technical issues.",
+        "Elo": 0.0,
+        "matching_time": 0,
+        "child_count": 1,
+        "expand_num": 5
+      },
+      {
+        "is_terminal": false,
+        "pruned": false,
+        "finished": true,
+        "depth": 10,
+        "node_type": "Action",
+        "description": "Finish",
+        "Elo": 0.0,
+        "matching_time": 0,
+        "child_count": 1,
+        "expand_num": 0
+      },
+      {
+        "is_terminal": false,
+        "pruned": false,
+        "finished": true,
+        "depth": 11,
+        "node_type": "Action Input",
+        "description": "{\n  \"return_type\": \"give_answer\",\n  \"final_answer\": \"For a 1-hour workout session of light weight lifting, you can potentially burn 217 calories. However, there was an error while checking for available appointments at the 'Fit Life' clinic for tomorrow. Additionally, there was an error in retrieving the appointment time list for January 25th at the 'Fit Life' clinic. It seems that the appointment system is experiencing technical issues.\"\n}",
+        "Elo": 0.0,
+        "matching_time": 0,
+        "observation": "{\"response\":\"successfully giving the final answer.\"}",
+        "observation_code": 3,
+        "child_count": 0,
+        "expand_num": 6,
+        "io_state": {}
+      }
+    ]
+  ],
+  "answer_generation": {
+    "valid_data": true,
+    "query_count": 6,
+    "forward_query_count": 6,
+    "backward_query_count": 0,
+    "total_tokens": 8619,
+    "final_answer": "{\n  \"return_type\": \"give_answer\",\n  \"final_answer\": \"For a 1-hour workout session of light weight lifting, you can potentially burn 217 calories. However, there was an error while checking for available appointments at the 'Fit Life' clinic for tomorrow. Additionally, there was an error in retrieving the appointment time list for January 25th at the 'Fit Life' clinic. It seems that the appointment system is experiencing technical issues.\"\n}",
+    "finish_type": "give_answer",
+    "function": [
+      {
+        "name": "v1_caloriesburned_for_calories_burned_by_api_ninjas",
+        "description": "This is the subfunction for tool \"calories_burned_by_api_ninjas\", you can use this tool.The description of this function is: \"API Ninjas Calories Burned API endpoint.\"",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "activity": {
+              "type": "string",
+              "description": "name of the given activity. This value can be partial (e.g. ski will match water skiing and downhill skiing)",
+              "example_value": "skiing"
+            },
+            "weight": {
+              "type": "integer",
+              "description": "weight of the user performing the activity in pounds. Must be between 50 and 500. Default value is 160."
+            },
+            "duration": {
+              "type": "string",
+              "description": "how long the activity was performed in minutes. Must be 1 or greater. Default value is 60 (1 hour)."
+            }
+          },
+          "required": [
+            "activity"
+          ],
+          "optional": [
+            "weight",
+            "duration"
+          ]
+        }
+      },
+      {
+        "name": "get_appointments_for_appointment_system_api",
+        "description": "This is the subfunction for tool \"appointment_system_api\", you can use this tool.The description of this function is: \"EndPoints returns all appointments in the date. \n\nParameter Description :\ndate : the date the appointments is requested\nclinicName : Name of the clinic\n\nReturn Value : \nIt returns json object. Json contains all the appointments in requested date.\n\nJson For\"",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "date": {
+              "type": "string",
+              "description": "",
+              "example_value": "2022.09.09"
+            },
+            "clinicname": {
+              "type": "string",
+              "description": "",
+              "example_value": "DemoUser"
+            }
+          },
+          "required": [
+            "date",
+            "clinicname"
+          ],
+          "optional": []
+        }
+      },
+      {
+        "name": "login_for_appointment_system_api",
+        "description": "This is the subfunction for tool \"appointment_system_api\", you can use this tool.The description of this function is: \"This Endpoint is use for login to the system and getting the Api Key for the clinic. It needs username and password as query parameters. \nParameter Descriptions:\nusername --> parameter for username in the system. It is the same with username while creating\"",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "password": {
+              "type": "string",
+              "description": "",
+              "example_value": "DemoPass"
+            },
+            "username": {
+              "type": "string",
+              "description": "",
+              "example_value": "DemoUser"
+            }
+          },
+          "required": [
+            "password",
+            "username"
+          ],
+          "optional": []
+        }
+      },
+      {
+        "name": "appointment_time_list_for_appointment_system_api",
+        "description": "This is the subfunction for tool \"appointment_system_api\", you can use this tool.The description of this function is: \"EndPoint gets appointment_time_list_for_appointment_system_api by Day. EndPoint gets date parameter and returns List of Appointment Times of that date. In the list there is available field, This field indicates whether there is an appointment at the specif\"",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "date": {
+              "type": "string",
+              "description": "",
+              "example_value": "2022.09.05"
+            },
+            "clinicname": {
+              "type": "string",
+              "description": "",
+              "example_value": "DemoClinic"
+            }
+          },
+          "required": [
+            "date"
+          ],
+          "optional": [
+            "clinicname"
+          ]
+        }
+      },
+      {
+        "name": "Finish",
+        "description": "If you believe that you have obtained a result that can answer the task, please call this function to provide the final answer. Alternatively, if you recognize that you are unable to proceed with the task in the current state, call this function to restart. Remember: you must ALWAYS call this function at the end of your attempt, and the only part that will be shown to the user is the final answer, so it should contain sufficient information.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "return_type": {
+              "type": "string",
+              "enum": [
+                "give_answer",
+                "give_up_and_restart"
+              ]
+            },
+            "final_answer": {
+              "type": "string",
+              "description": "The final answer you want to give the user. You should have this field if \"return_type\"==\"give_answer\""
+            }
+          },
+          "required": [
+            "return_type"
+          ]
+        }
+      }
+    ],
+    "chain": [],
+    "train_messages": [
+      [
+        {
+          "role": "system",
+          "content": "You are an AutoGPT, capable of utilizing numerous tools and functions to complete the given task. \n1.First, I will provide you with the task description, and your task will commence. \n2.At each step, you need to analyze the current status and determine the next course of action by executing a function call. \n3.Following the call, you will receive the result, transitioning you to a new state. Subsequently, you will analyze your current status, make decisions about the next steps, and repeat this process. \n4.After several iterations of thought and function calls, you will ultimately complete the task and provide your final answer. \n\nRemember: \n1.The state changes are irreversible, and you cannot return to a previous state.\n2.Keep your thoughts concise, limiting them to a maximum of five sentences.\n3.You can make multiple attempts. If you plan to try different conditions continuously, perform one condition per try.\n4.If you believe you have gathered enough information, call the function \"Finish: give_answer\" to provide your answer for the task.\n5.If you feel unable to handle the task from this step, call the function \"Finish: give_up_and_restart\".\nLet's Begin!\nTask description: You should use functions to help handle the real time user querys. Remember:\n1.ALWAYS call \"Finish\" function at the end of the task. And the final answer should contain enough information to show to the user,If you can't handle the task, or you find that function calls always fail(the function is not valid now), use function Finish->give_up_and_restart.\n2.Do not use origin tool names, use only subfunctions' names.\nYou have access of the following tools:\n1.calories_burned_by_api_ninjas: Calories burned calculator for hundreds of different sports/activities. See more info at https://api-ninjas.com/api/caloriesburned.\n2.appointment_system_api: Appointment System Api with user operations and admin operations. Api has all appointment operations for a clinic\n"
+        },
+        {
+          "role": "user",
+          "content": "\nI want to start a new fitness routine and need to track the number of calories burned during a 1-hour workout session. Can you provide me with the estimated calories burned for a workout activity? Additionally, check if there are any available appointments at the 'Fit Life' clinic for tomorrow.\nBegin!\n"
+        },
+        {
+          "role": "assistant",
+          "content": "I need to call the \"calories_burned_by_api_ninjas\" function to calculate the estimated calories burned for a workout activity. The activity is \"workout\" and the duration is \"60\" minutes. This API will provide the necessary information to track the number of calories burned during a 1-hour workout session.",
+          "function_call": {
+            "name": "v1_caloriesburned_for_calories_burned_by_api_ninjas",
+            "arguments": "{\n  \"activity\": \"workout\",\n  \"duration\": \"60\"\n}"
+          }
+        }
+      ],
+      [
+        {
+          "role": "system",
+          "content": "You are an AutoGPT, capable of utilizing numerous tools and functions to complete the given task. \n1.First, I will provide you with the task description, and your task will commence. \n2.At each step, you need to analyze the current status and determine the next course of action by executing a function call. \n3.Following the call, you will receive the result, transitioning you to a new state. Subsequently, you will analyze your current status, make decisions about the next steps, and repeat this process. \n4.After several iterations of thought and function calls, you will ultimately complete the task and provide your final answer. \n\nRemember: \n1.The state changes are irreversible, and you cannot return to a previous state.\n2.Keep your thoughts concise, limiting them to a maximum of five sentences.\n3.You can make multiple attempts. If you plan to try different conditions continuously, perform one condition per try.\n4.If you believe you have gathered enough information, call the function \"Finish: give_answer\" to provide your answer for the task.\n5.If you feel unable to handle the task from this step, call the function \"Finish: give_up_and_restart\".\nLet's Begin!\nTask description: You should use functions to help handle the real time user querys. Remember:\n1.ALWAYS call \"Finish\" function at the end of the task. And the final answer should contain enough information to show to the user,If you can't handle the task, or you find that function calls always fail(the function is not valid now), use function Finish->give_up_and_restart.\n2.Do not use origin tool names, use only subfunctions' names.\nYou have access of the following tools:\n1.calories_burned_by_api_ninjas: Calories burned calculator for hundreds of different sports/activities. See more info at https://api-ninjas.com/api/caloriesburned.\n2.appointment_system_api: Appointment System Api with user operations and admin operations. Api has all appointment operations for a clinic\n"
+        },
+        {
+          "role": "user",
+          "content": "\nI want to start a new fitness routine and need to track the number of calories burned during a 1-hour workout session. Can you provide me with the estimated calories burned for a workout activity? Additionally, check if there are any available appointments at the 'Fit Life' clinic for tomorrow.\nBegin!\n"
+        },
+        {
+          "role": "assistant",
+          "content": "I need to call the \"calories_burned_by_api_ninjas\" function to calculate the estimated calories burned for a workout activity. The activity is \"workout\" and the duration is \"60\" minutes. This API will provide the necessary information to track the number of calories burned during a 1-hour workout session.",
+          "function_call": {
+            "name": "v1_caloriesburned_for_calories_burned_by_api_ninjas",
+            "arguments": "{\n  \"activity\": \"workout\",\n  \"duration\": \"60\"\n}"
+          }
+        },
+        {
+          "role": "function",
+          "name": "v1_caloriesburned_for_calories_burned_by_api_ninjas",
+          "content": "{\"error\": \"\", \"response\": \"[{'name': 'Weight lifting, light workout', 'calories_per_hour': 217, 'duration_minutes': 60, 'total_calories': 217}]\"}"
+        },
+        {
+          "role": "assistant",
+          "content": "Based on the previous assistant message, I need to call the \"get_appointments_for_appointment_system_api\" function to check for available appointments at the 'Fit Life' clinic for tomorrow. By providing the arguments \"date\" as \"tomorrow\" and \"clinicname\" as \"Fit Life\", this API will retrieve the necessary information about available appointments at the specified clinic and date.",
+          "function_call": {
+            "name": "get_appointments_for_appointment_system_api",
+            "arguments": "{\n  \"date\": \"tomorrow\",\n  \"clinicname\": \"Fit Life\"\n}"
+          }
+        }
+      ],
+      [
+        {
+          "role": "system",
+          "content": "You are an AutoGPT, capable of utilizing numerous tools and functions to complete the given task. \n1.First, I will provide you with the task description, and your task will commence. \n2.At each step, you need to analyze the current status and determine the next course of action by executing a function call. \n3.Following the call, you will receive the result, transitioning you to a new state. Subsequently, you will analyze your current status, make decisions about the next steps, and repeat this process. \n4.After several iterations of thought and function calls, you will ultimately complete the task and provide your final answer. \n\nRemember: \n1.The state changes are irreversible, and you cannot return to a previous state.\n2.Keep your thoughts concise, limiting them to a maximum of five sentences.\n3.You can make multiple attempts. If you plan to try different conditions continuously, perform one condition per try.\n4.If you believe you have gathered enough information, call the function \"Finish: give_answer\" to provide your answer for the task.\n5.If you feel unable to handle the task from this step, call the function \"Finish: give_up_and_restart\".\nLet's Begin!\nTask description: You should use functions to help handle the real time user querys. Remember:\n1.ALWAYS call \"Finish\" function at the end of the task. And the final answer should contain enough information to show to the user,If you can't handle the task, or you find that function calls always fail(the function is not valid now), use function Finish->give_up_and_restart.\n2.Do not use origin tool names, use only subfunctions' names.\nYou have access of the following tools:\n1.calories_burned_by_api_ninjas: Calories burned calculator for hundreds of different sports/activities. See more info at https://api-ninjas.com/api/caloriesburned.\n2.appointment_system_api: Appointment System Api with user operations and admin operations. Api has all appointment operations for a clinic\n"
+        },
+        {
+          "role": "user",
+          "content": "\nI want to start a new fitness routine and need to track the number of calories burned during a 1-hour workout session. Can you provide me with the estimated calories burned for a workout activity? Additionally, check if there are any available appointments at the 'Fit Life' clinic for tomorrow.\nBegin!\n"
+        },
+        {
+          "role": "assistant",
+          "content": "I need to call the \"calories_burned_by_api_ninjas\" function to calculate the estimated calories burned for a workout activity. The activity is \"workout\" and the duration is \"60\" minutes. This API will provide the necessary information to track the number of calories burned during a 1-hour workout session.",
+          "function_call": {
+            "name": "v1_caloriesburned_for_calories_burned_by_api_ninjas",
+            "arguments": "{\n  \"activity\": \"workout\",\n  \"duration\": \"60\"\n}"
+          }
+        },
+        {
+          "role": "function",
+          "name": "v1_caloriesburned_for_calories_burned_by_api_ninjas",
+          "content": "{\"error\": \"\", \"response\": \"[{'name': 'Weight lifting, light workout', 'calories_per_hour': 217, 'duration_minutes': 60, 'total_calories': 217}]\"}"
+        },
+        {
+          "role": "assistant",
+          "content": "Based on the previous assistant message, I need to call the \"get_appointments_for_appointment_system_api\" function to check for available appointments at the 'Fit Life' clinic for tomorrow. By providing the arguments \"date\" as \"tomorrow\" and \"clinicname\" as \"Fit Life\", this API will retrieve the necessary information about available appointments at the specified clinic and date.",
+          "function_call": {
+            "name": "get_appointments_for_appointment_system_api",
+            "arguments": "{\n  \"date\": \"tomorrow\",\n  \"clinicname\": \"Fit Life\"\n}"
+          }
+        },
+        {
+          "role": "function",
+          "name": "get_appointments_for_appointment_system_api",
+          "content": "{\"error\": \"Message error...\", \"response\": \"{'type': 'https://tools.ietf.org/html/rfc7231#section-6.5.1', 'title': 'One or more validation errors occurred.', 'status': 400, 'traceId': '00-806e006eaff932dbbab440514cffcad1-5ae619f7cdae08c3-00', 'errors': {'date': [\\\"The value 'tomorrow' is not valid.\\\"]}}\"}"
+        },
+        {
+          "role": "assistant",
+          "content": "Since the previous assistant message mentioned calling the \"get_appointments_for_appointment_system_api\" function to check for available appointments at the 'Fit Life' clinic for tomorrow, I should provide the arguments \"date\" as \"tomorrow\" and \"clinicname\" as \"Fit Life\". By using this API, I can retrieve the necessary information about available appointments at the specified clinic and date. However, the API returned an error message stating that the value 'tomorrow' is not valid for the \"date\" argument. To resolve this, I will need to modify the argument to a valid date format, such as \"2022-01-25\", and call the \"appointment_time_list_for_appointment_system_api\" function with the updated arguments.",
+          "function_call": {
+            "name": "appointment_time_list_for_appointment_system_api",
+            "arguments": "{\n  \"date\": \"2022-01-25\",\n  \"clinicname\": \"Fit Life\"\n}"
+          }
+        }
+      ],
+      [
+        {
+          "role": "system",
+          "content": "You are an AutoGPT, capable of utilizing numerous tools and functions to complete the given task. \n1.First, I will provide you with the task description, and your task will commence. \n2.At each step, you need to analyze the current status and determine the next course of action by executing a function call. \n3.Following the call, you will receive the result, transitioning you to a new state. Subsequently, you will analyze your current status, make decisions about the next steps, and repeat this process. \n4.After several iterations of thought and function calls, you will ultimately complete the task and provide your final answer. \n\nRemember: \n1.The state changes are irreversible, and you cannot return to a previous state.\n2.Keep your thoughts concise, limiting them to a maximum of five sentences.\n3.You can make multiple attempts. If you plan to try different conditions continuously, perform one condition per try.\n4.If you believe you have gathered enough information, call the function \"Finish: give_answer\" to provide your answer for the task.\n5.If you feel unable to handle the task from this step, call the function \"Finish: give_up_and_restart\".\nLet's Begin!\nTask description: You should use functions to help handle the real time user querys. Remember:\n1.ALWAYS call \"Finish\" function at the end of the task. And the final answer should contain enough information to show to the user,If you can't handle the task, or you find that function calls always fail(the function is not valid now), use function Finish->give_up_and_restart.\n2.Do not use origin tool names, use only subfunctions' names.\nYou have access of the following tools:\n1.calories_burned_by_api_ninjas: Calories burned calculator for hundreds of different sports/activities. See more info at https://api-ninjas.com/api/caloriesburned.\n2.appointment_system_api: Appointment System Api with user operations and admin operations. Api has all appointment operations for a clinic\n"
+        },
+        {
+          "role": "user",
+          "content": "\nI want to start a new fitness routine and need to track the number of calories burned during a 1-hour workout session. Can you provide me with the estimated calories burned for a workout activity? Additionally, check if there are any available appointments at the 'Fit Life' clinic for tomorrow.\nBegin!\n"
+        },
+        {
+          "role": "assistant",
+          "content": "I need to call the \"calories_burned_by_api_ninjas\" function to calculate the estimated calories burned for a workout activity. The activity is \"workout\" and the duration is \"60\" minutes. This API will provide the necessary information to track the number of calories burned during a 1-hour workout session.",
+          "function_call": {
+            "name": "v1_caloriesburned_for_calories_burned_by_api_ninjas",
+            "arguments": "{\n  \"activity\": \"workout\",\n  \"duration\": \"60\"\n}"
+          }
+        },
+        {
+          "role": "function",
+          "name": "v1_caloriesburned_for_calories_burned_by_api_ninjas",
+          "content": "{\"error\": \"\", \"response\": \"[{'name': 'Weight lifting, light workout', 'calories_per_hour': 217, 'duration_minutes': 60, 'total_calories': 217}]\"}"
+        },
+        {
+          "role": "assistant",
+          "content": "Based on the previous assistant message, I need to call the \"get_appointments_for_appointment_system_api\" function to check for available appointments at the 'Fit Life' clinic for tomorrow. By providing the arguments \"date\" as \"tomorrow\" and \"clinicname\" as \"Fit Life\", this API will retrieve the necessary information about available appointments at the specified clinic and date.",
+          "function_call": {
+            "name": "get_appointments_for_appointment_system_api",
+            "arguments": "{\n  \"date\": \"tomorrow\",\n  \"clinicname\": \"Fit Life\"\n}"
+          }
+        },
+        {
+          "role": "function",
+          "name": "get_appointments_for_appointment_system_api",
+          "content": "{\"error\": \"Message error...\", \"response\": \"{'type': 'https://tools.ietf.org/html/rfc7231#section-6.5.1', 'title': 'One or more validation errors occurred.', 'status': 400, 'traceId': '00-806e006eaff932dbbab440514cffcad1-5ae619f7cdae08c3-00', 'errors': {'date': [\\\"The value 'tomorrow' is not valid.\\\"]}}\"}"
+        },
+        {
+          "role": "assistant",
+          "content": "Since the previous assistant message mentioned calling the \"get_appointments_for_appointment_system_api\" function to check for available appointments at the 'Fit Life' clinic for tomorrow, I should provide the arguments \"date\" as \"tomorrow\" and \"clinicname\" as \"Fit Life\". By using this API, I can retrieve the necessary information about available appointments at the specified clinic and date. However, the API returned an error message stating that the value 'tomorrow' is not valid for the \"date\" argument. To resolve this, I will need to modify the argument to a valid date format, such as \"2022-01-25\", and call the \"appointment_time_list_for_appointment_system_api\" function with the updated arguments.",
+          "function_call": {
+            "name": "appointment_time_list_for_appointment_system_api",
+            "arguments": "{\n  \"date\": \"2022-01-25\",\n  \"clinicname\": \"Fit Life\"\n}"
+          }
+        },
+        {
+          "role": "function",
+          "name": "appointment_time_list_for_appointment_system_api",
+          "content": "{\"error\": \"Message error...\", \"response\": \"[{'id': 1, 'hLabel': 'Object reference not set to an instance of an object.', 'available': 'error', 'hour': 0, 'minute': 0, 'interval': 0}]\"}"
+        },
+        {
+          "role": "assistant",
+          "content": "Based on the previous assistant message, I need to call the \"get_appointments_for_appointment_system_api\" function to check for available appointments at the 'Fit Life' clinic for tomorrow. However, the API returned an error message stating that the value 'tomorrow' is not valid for the \"date\" argument. To resolve this, I will modify the argument to a valid date format, such as \"2022-01-25\", and call the \"appointment_time_list_for_appointment_system_api\" function with the updated arguments. This API will retrieve the necessary information about available appointment times at the specified clinic and date.",
+          "function_call": {
+            "name": "get_appointments_for_appointment_system_api",
+            "arguments": "{\n  \"date\": \"2022-01-25\",\n  \"clinicname\": \"Fit Life\"\n}"
+          }
+        }
+      ],
+      [
+        {
+          "role": "system",
+          "content": "You are an AutoGPT, capable of utilizing numerous tools and functions to complete the given task. \n1.First, I will provide you with the task description, and your task will commence. \n2.At each step, you need to analyze the current status and determine the next course of action by executing a function call. \n3.Following the call, you will receive the result, transitioning you to a new state. Subsequently, you will analyze your current status, make decisions about the next steps, and repeat this process. \n4.After several iterations of thought and function calls, you will ultimately complete the task and provide your final answer. \n\nRemember: \n1.The state changes are irreversible, and you cannot return to a previous state.\n2.Keep your thoughts concise, limiting them to a maximum of five sentences.\n3.You can make multiple attempts. If you plan to try different conditions continuously, perform one condition per try.\n4.If you believe you have gathered enough information, call the function \"Finish: give_answer\" to provide your answer for the task.\n5.If you feel unable to handle the task from this step, call the function \"Finish: give_up_and_restart\".\nLet's Begin!\nTask description: You should use functions to help handle the real time user querys. Remember:\n1.ALWAYS call \"Finish\" function at the end of the task. And the final answer should contain enough information to show to the user,If you can't handle the task, or you find that function calls always fail(the function is not valid now), use function Finish->give_up_and_restart.\n2.Do not use origin tool names, use only subfunctions' names.\nYou have access of the following tools:\n1.calories_burned_by_api_ninjas: Calories burned calculator for hundreds of different sports/activities. See more info at https://api-ninjas.com/api/caloriesburned.\n2.appointment_system_api: Appointment System Api with user operations and admin operations. Api has all appointment operations for a clinic\n"
+        },
+        {
+          "role": "user",
+          "content": "\nI want to start a new fitness routine and need to track the number of calories burned during a 1-hour workout session. Can you provide me with the estimated calories burned for a workout activity? Additionally, check if there are any available appointments at the 'Fit Life' clinic for tomorrow.\nBegin!\n"
+        },
+        {
+          "role": "assistant",
+          "content": "I need to call the \"calories_burned_by_api_ninjas\" function to calculate the estimated calories burned for a workout activity. The activity is \"workout\" and the duration is \"60\" minutes. This API will provide the necessary information to track the number of calories burned during a 1-hour workout session.",
+          "function_call": {
+            "name": "v1_caloriesburned_for_calories_burned_by_api_ninjas",
+            "arguments": "{\n  \"activity\": \"workout\",\n  \"duration\": \"60\"\n}"
+          }
+        },
+        {
+          "role": "function",
+          "name": "v1_caloriesburned_for_calories_burned_by_api_ninjas",
+          "content": "{\"error\": \"\", \"response\": \"[{'name': 'Weight lifting, light workout', 'calories_per_hour': 217, 'duration_minutes': 60, 'total_calories': 217}]\"}"
+        },
+        {
+          "role": "assistant",
+          "content": "Based on the previous assistant message, I need to call the \"get_appointments_for_appointment_system_api\" function to check for available appointments at the 'Fit Life' clinic for tomorrow. By providing the arguments \"date\" as \"tomorrow\" and \"clinicname\" as \"Fit Life\", this API will retrieve the necessary information about available appointments at the specified clinic and date.",
+          "function_call": {
+            "name": "get_appointments_for_appointment_system_api",
+            "arguments": "{\n  \"date\": \"tomorrow\",\n  \"clinicname\": \"Fit Life\"\n}"
+          }
+        },
+        {
+          "role": "function",
+          "name": "get_appointments_for_appointment_system_api",
+          "content": "{\"error\": \"Message error...\", \"response\": \"{'type': 'https://tools.ietf.org/html/rfc7231#section-6.5.1', 'title': 'One or more validation errors occurred.', 'status': 400, 'traceId': '00-806e006eaff932dbbab440514cffcad1-5ae619f7cdae08c3-00', 'errors': {'date': [\\\"The value 'tomorrow' is not valid.\\\"]}}\"}"
+        },
+        {
+          "role": "assistant",
+          "content": "Since the previous assistant message mentioned calling the \"get_appointments_for_appointment_system_api\" function to check for available appointments at the 'Fit Life' clinic for tomorrow, I should provide the arguments \"date\" as \"tomorrow\" and \"clinicname\" as \"Fit Life\". By using this API, I can retrieve the necessary information about available appointments at the specified clinic and date. However, the API returned an error message stating that the value 'tomorrow' is not valid for the \"date\" argument. To resolve this, I will need to modify the argument to a valid date format, such as \"2022-01-25\", and call the \"appointment_time_list_for_appointment_system_api\" function with the updated arguments.",
+          "function_call": {
+            "name": "appointment_time_list_for_appointment_system_api",
+            "arguments": "{\n  \"date\": \"2022-01-25\",\n  \"clinicname\": \"Fit Life\"\n}"
+          }
+        },
+        {
+          "role": "function",
+          "name": "appointment_time_list_for_appointment_system_api",
+          "content": "{\"error\": \"Message error...\", \"response\": \"[{'id': 1, 'hLabel': 'Object reference not set to an instance of an object.', 'available': 'error', 'hour': 0, 'minute': 0, 'interval': 0}]\"}"
+        },
+        {
+          "role": "assistant",
+          "content": "Based on the previous assistant message, I need to call the \"get_appointments_for_appointment_system_api\" function to check for available appointments at the 'Fit Life' clinic for tomorrow. However, the API returned an error message stating that the value 'tomorrow' is not valid for the \"date\" argument. To resolve this, I will modify the argument to a valid date format, such as \"2022-01-25\", and call the \"appointment_time_list_for_appointment_system_api\" function with the updated arguments. This API will retrieve the necessary information about available appointment times at the specified clinic and date.",
+          "function_call": {
+            "name": "get_appointments_for_appointment_system_api",
+            "arguments": "{\n  \"date\": \"2022-01-25\",\n  \"clinicname\": \"Fit Life\"\n}"
+          }
+        },
+        {
+          "role": "function",
+          "name": "get_appointments_for_appointment_system_api",
+          "content": "{\"error\": \"\", \"response\": \"[]\"}"
+        },
+        {
+          "role": "assistant",
+          "content": "Based on the information I obtained, a 1-hour workout session of a light weight lifting activity can potentially burn 217 calories. However, I encountered an error while trying to check for available appointments at the 'Fit Life' clinic for tomorrow. Nevertheless, I successfully retrieved the appointment time list for January 25th at the 'Fit Life' clinic, and there was an error in the response. It seems that the appointment system is experiencing some technical issues."
+        }
+      ],
+      [
+        {
+          "role": "system",
+          "content": "You are an AutoGPT, capable of utilizing numerous tools and functions to complete the given task. \n1.First, I will provide you with the task description, and your task will commence. \n2.At each step, you need to analyze the current status and determine the next course of action by executing a function call. \n3.Following the call, you will receive the result, transitioning you to a new state. Subsequently, you will analyze your current status, make decisions about the next steps, and repeat this process. \n4.After several iterations of thought and function calls, you will ultimately complete the task and provide your final answer. \n\nRemember: \n1.The state changes are irreversible, and you cannot return to a previous state.\n2.Keep your thoughts concise, limiting them to a maximum of five sentences.\n3.You can make multiple attempts. If you plan to try different conditions continuously, perform one condition per try.\n4.If you believe you have gathered enough information, call the function \"Finish: give_answer\" to provide your answer for the task.\n5.If you feel unable to handle the task from this step, call the function \"Finish: give_up_and_restart\".\nLet's Begin!\nTask description: You should use functions to help handle the real time user querys. Remember:\n1.ALWAYS call \"Finish\" function at the end of the task. And the final answer should contain enough information to show to the user,If you can't handle the task, or you find that function calls always fail(the function is not valid now), use function Finish->give_up_and_restart.\n2.Do not use origin tool names, use only subfunctions' names.\nYou have access of the following tools:\n1.calories_burned_by_api_ninjas: Calories burned calculator for hundreds of different sports/activities. See more info at https://api-ninjas.com/api/caloriesburned.\n2.appointment_system_api: Appointment System Api with user operations and admin operations. Api has all appointment operations for a clinic\n"
+        },
+        {
+          "role": "user",
+          "content": "\nI want to start a new fitness routine and need to track the number of calories burned during a 1-hour workout session. Can you provide me with the estimated calories burned for a workout activity? Additionally, check if there are any available appointments at the 'Fit Life' clinic for tomorrow.\nBegin!\n"
+        },
+        {
+          "role": "assistant",
+          "content": "I need to call the \"calories_burned_by_api_ninjas\" function to calculate the estimated calories burned for a workout activity. The activity is \"workout\" and the duration is \"60\" minutes. This API will provide the necessary information to track the number of calories burned during a 1-hour workout session.",
+          "function_call": {
+            "name": "v1_caloriesburned_for_calories_burned_by_api_ninjas",
+            "arguments": "{\n  \"activity\": \"workout\",\n  \"duration\": \"60\"\n}"
+          }
+        },
+        {
+          "role": "function",
+          "name": "v1_caloriesburned_for_calories_burned_by_api_ninjas",
+          "content": "{\"error\": \"\", \"response\": \"[{'name': 'Weight lifting, light workout', 'calories_per_hour': 217, 'duration_minutes': 60, 'total_calories': 217}]\"}"
+        },
+        {
+          "role": "assistant",
+          "content": "Based on the previous assistant message, I need to call the \"get_appointments_for_appointment_system_api\" function to check for available appointments at the 'Fit Life' clinic for tomorrow. By providing the arguments \"date\" as \"tomorrow\" and \"clinicname\" as \"Fit Life\", this API will retrieve the necessary information about available appointments at the specified clinic and date.",
+          "function_call": {
+            "name": "get_appointments_for_appointment_system_api",
+            "arguments": "{\n  \"date\": \"tomorrow\",\n  \"clinicname\": \"Fit Life\"\n}"
+          }
+        },
+        {
+          "role": "function",
+          "name": "get_appointments_for_appointment_system_api",
+          "content": "{\"error\": \"Message error...\", \"response\": \"{'type': 'https://tools.ietf.org/html/rfc7231#section-6.5.1', 'title': 'One or more validation errors occurred.', 'status': 400, 'traceId': '00-806e006eaff932dbbab440514cffcad1-5ae619f7cdae08c3-00', 'errors': {'date': [\\\"The value 'tomorrow' is not valid.\\\"]}}\"}"
+        },
+        {
+          "role": "assistant",
+          "content": "Since the previous assistant message mentioned calling the \"get_appointments_for_appointment_system_api\" function to check for available appointments at the 'Fit Life' clinic for tomorrow, I should provide the arguments \"date\" as \"tomorrow\" and \"clinicname\" as \"Fit Life\". By using this API, I can retrieve the necessary information about available appointments at the specified clinic and date. However, the API returned an error message stating that the value 'tomorrow' is not valid for the \"date\" argument. To resolve this, I will need to modify the argument to a valid date format, such as \"2022-01-25\", and call the \"appointment_time_list_for_appointment_system_api\" function with the updated arguments.",
+          "function_call": {
+            "name": "appointment_time_list_for_appointment_system_api",
+            "arguments": "{\n  \"date\": \"2022-01-25\",\n  \"clinicname\": \"Fit Life\"\n}"
+          }
+        },
+        {
+          "role": "function",
+          "name": "appointment_time_list_for_appointment_system_api",
+          "content": "{\"error\": \"Message error...\", \"response\": \"[{'id': 1, 'hLabel': 'Object reference not set to an instance of an object.', 'available': 'error', 'hour': 0, 'minute': 0, 'interval': 0}]\"}"
+        },
+        {
+          "role": "assistant",
+          "content": "Based on the previous assistant message, I need to call the \"get_appointments_for_appointment_system_api\" function to check for available appointments at the 'Fit Life' clinic for tomorrow. However, the API returned an error message stating that the value 'tomorrow' is not valid for the \"date\" argument. To resolve this, I will modify the argument to a valid date format, such as \"2022-01-25\", and call the \"appointment_time_list_for_appointment_system_api\" function with the updated arguments. This API will retrieve the necessary information about available appointment times at the specified clinic and date.",
+          "function_call": {
+            "name": "get_appointments_for_appointment_system_api",
+            "arguments": "{\n  \"date\": \"2022-01-25\",\n  \"clinicname\": \"Fit Life\"\n}"
+          }
+        },
+        {
+          "role": "function",
+          "name": "get_appointments_for_appointment_system_api",
+          "content": "{\"error\": \"\", \"response\": \"[]\"}"
+        },
+        {
+          "role": "assistant",
+          "content": "Based on the information I obtained, a 1-hour workout session of a light weight lifting activity can potentially burn 217 calories. However, I encountered an error while trying to check for available appointments at the 'Fit Life' clinic for tomorrow. Nevertheless, I successfully retrieved the appointment time list for January 25th at the 'Fit Life' clinic, and there was an error in the response. It seems that the appointment system is experiencing some technical issues."
+        },
+        {
+          "role": "assistant",
+          "content": "Given the history information and the current API call, my thought is that the previous assistant message mentioned calling the \"get_appointments_for_appointment_system_api\" function to check for available appointments at the 'Fit Life' clinic for tomorrow. However, the API returned an error message stating that the value 'tomorrow' is not valid for the \"date\" argument. To resolve this, I modified the argument to a valid date format, such as \"2022-01-25\", and called the \"appointment_time_list_for_appointment_system_api\" function with the updated arguments. This API will retrieve the necessary information about available appointment times at the specified clinic and date. Unfortunately, the response from the API contained an error, indicating that the appointment system is experiencing technical issues.",
+          "function_call": {
+            "name": "Finish",
+            "arguments": "{\n  \"return_type\": \"give_answer\",\n  \"final_answer\": \"For a 1-hour workout session of light weight lifting, you can potentially burn 217 calories. However, there was an error while checking for available appointments at the 'Fit Life' clinic for tomorrow. Additionally, there was an error in retrieving the appointment time list for January 25th at the 'Fit Life' clinic. It seems that the appointment system is experiencing technical issues.\"\n}"
+          }
+        }
+      ]
+    ],
+    "query": "I want to start a new fitness routine and need to track the number of calories burned during a 1-hour workout session. Can you provide me with the estimated calories burned for a workout activity? Additionally, check if there are any available appointments at the 'Fit Life' clinic for tomorrow."
+  }
+}

@@ -10,5 +10,5 @@ output_file=${CONVERTED_ANSWER_PATH}/${MODEL_NAME}/${test_set}.json
 
 python convert_to_answer_format.py\
     --answer_dir ${answer_dir} \
-    --method DFS_woFilter_w2 \
+    --method CoT@1 \
     --output ${output_file}

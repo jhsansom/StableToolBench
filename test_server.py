@@ -7,10 +7,10 @@ import os
 url = 'http://127.0.0.1:12001/virtual'
 #url = 'http://0.0.0.0:8080/virtual'
 data = {
-    "category": "Artificial_Intelligence_Machine_Learning",
-    "tool_name": "TTSKraken",
-    "api_name": "List Languages",
-    "tool_input": '{}',
+    "category": "Social",
+    "tool_name": "Instagram Data",
+    "api_name": "User info by username",
+    "tool_input": "{}",
     "strip": "truncate",
     "toolbench_key": ""
 }
